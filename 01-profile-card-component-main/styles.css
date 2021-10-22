@@ -1,0 +1,134 @@
+@import url(https://fonts.googleapis.com/css?family=Kumbh+Sans);
+:root {
+  --darkCyan: hsl(185, 75%, 39%);
+  --darkDesaturatedBlue: hsl(229, 23%, 23%);
+  --darkGrayishBlue: hsl(227, 10%, 46%);
+  --darkGray: hsl(0, 0%, 59%);
+  font-size: 18px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+section {
+  height: 100vh;
+}
+
+body {
+  font-size: var(--font-size);
+  font-family: 'Kumbh Sans', serif;
+  background-color: var(--darkCyan);
+  background-image: url('../images/bg-pattern-top.svg'),
+    url('../images/bg-pattern-bottom.svg');
+  background-position: right 50vw bottom calc(50vh + 25%),
+    left 50vw top calc(50vh + 25%);
+  background-repeat: no-repeat;
+}
+
+section {
+  /** Center entire card **/
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+footer {
+  display: none;
+}
+
+.card {
+  width: 326px;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 4px 4px 50px rgba(0, 0, 0, 0.25);
+}
+
+.card__header {
+  background-image: url('./images/bg-pattern-card.svg');
+  background-size: cover;
+  height: 142px;
+  border-radius: 15px 15px 0 0;
+  /** So profile picture can be centered correctly **/
+  position: relative;
+}
+
+.card__profile-picture {
+  position: absolute;
+  /* Image is 100px in height */
+  bottom: -50px;
+  /** Center on x-axis **/
+  left: 50%;
+  transform: translateX(-50%);
+  /** Add white spacing between profile picture **/
+  border-radius: 50%;
+  background-color: white;
+  padding: 5px;
+}
+
+.card__profile-picture > img {
+  /** Keep photo 100px by 100px **/
+  width: 100%;
+  height: 100%;
+
+  /** Make picture a circle **/
+  border-radius: 50%;
+}
+
+.card__body {
+  /** Apply some spacing for the profile picture **/
+  margin-top: 65px;
+  /** Align text to the very center of page **/
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.card__age {
+  color: var(--darkGray);
+  font-weight: 300;
+  padding-left: 5px;
+}
+
+.card__city {
+  color: var(--darkGray);
+  font-size: 14px;
+  padding: 10px;
+}
+
+.card__name,
+.card__stats {
+  font-size: var(--font-size);
+  font-weight: 700;
+}
+
+.card__stats-title {
+  color: var(--darkGray);
+  font-size: 14px;
+  padding: 5px 2px;
+}
+
+.card__footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+
+  /** Apply spacing above **/
+  margin-top: 20px;
+  /**Bordering **/
+  border-top: rgba(0, 0, 0, 0.1) solid 1px;
+  /* border-top: 1px solid var(--darkGray); */
+  /** Apply space around stats **/
+  padding: 20px 0;
+}
+
+.card__detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
